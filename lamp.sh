@@ -3,7 +3,15 @@
 #
 
 if [[ "${UID}" -ne 0 ]]; then
-	echo "root user"
+	echo "user need to be root."
+	echo "sudo -i | su -"
 else
-	echo "you need to be root"
+	echo "root user"
 fi
+
+main() {
+	echo "Ok."
+}
+
+main
+
