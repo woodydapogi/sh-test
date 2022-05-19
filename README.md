@@ -1,1 +1,1 @@
-# sh-test
+# Test Shell Scripts using Bash
