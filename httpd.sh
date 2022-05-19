@@ -23,8 +23,22 @@ httpd_package () {
 	sudo systemctl start httpd
 
 	#confirm httpd service is running.
-	clear
-	sudo systemctl status httpd
+	
+	ls /var/run/httpd.pid > /dev/null
+	
+	if [[ $? -eq 0 ]]; then
+		echo "HTTPD service is running."
+	else
+		echo "HTTPD service status: stopped."
+		echo "Starting HTTPD service."
+		systemctl start httpd
+		if [[ $? -eq 0 ]]; then
+			clear
+			systemctl status httpd
+		else
+			echo "HTTPD service status: stopped."
+		fi
+	fi
 
 }
 
