@@ -9,6 +9,23 @@ echo" IP Address: $IP_ADDR"
 
 httpd_package () {
 	yum install update > /dev/null
+	
+	clear
+
+	#install httpd service.
+	echo "### INSTALLING HTTPD SERVICE. ###"
+	sudo yum install httpd -y > /dev/null
+
+	#enable httpd service.
+	sudo systemctl enable httpd
+	
+	#start httpd service.
+	sudo systemctl start httpd
+
+	#confirm httpd service is running.
+	clear
+	sudo systemctl status httpd
+
 }
 
 if [[ "${UID}" -ne 0 ]]; then
