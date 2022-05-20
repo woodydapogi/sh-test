@@ -1,5 +1,5 @@
 #!/bin/bash
-# Purpose: Installation of httpd service
+# Purpose: Installation of httpd service.
 # Env: CentOS
 #
 
