@@ -12,23 +12,23 @@ echo "####"
 PKG=("httpd" "mariadb-server" "php" "php-mysql")
 
 packages () {
-
+	
 	sudo yum install update -y > /dev/null
 
 	sleep 1
 
 	echo
 
+	# package installation.
 	for package in "${PKG[@]}"; do
-		yum install "$package" -y > /dev/null
-		
+		yum install "$package" -y > /dev/null		
 	done
 
 	echo "### Installation done. ###"
 
 	clear
 
-	#Check status for the packages
+	# check status for the packages
 	for svc in "httpd" "mariadb"; do
 		echo "### $svc ####"
 		systemctl status $svc
