@@ -42,3 +42,13 @@ packages () {
 
 packages
 
+if [[ "$?" -eq 0 ]]; then
+	clear
+	for pkg in "${PKG[@]}"; do
+		echo "$pkg status: running."
+
+	done
+else
+	echo "Error."
+fi
+
