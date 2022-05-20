@@ -3,6 +3,8 @@
 # Env: CentOS
 #
 
+date
+
 IP_ADDR=$(ip addr show eth0 | grep inet | awk '{print $2}')
 
 echo" IP Address: $IP_ADDR"
@@ -40,6 +42,12 @@ httpd_package () {
 		fi
 	fi
 
+}
+
+mysql_package () {
+	sudo yum install mariadb-server -y
+
+	
 }
 
 if [[ "${UID}" -ne 0 ]]; then
