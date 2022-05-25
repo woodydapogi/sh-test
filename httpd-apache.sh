@@ -2,7 +2,7 @@
 # Test Lab Env using Vagrant
 # Purpose: Install apache2 service.
 # Env: CentOS; Ubuntu
-#
+##
 
 IP="$@"
 PKG=("httpd" "apache2" "curl")
