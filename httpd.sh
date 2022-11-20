@@ -5,6 +5,8 @@
 
 date
 
+echo "Test"
+
 IP_ADDR=$(ip addr show eth0 | grep inet | awk '{print $2}')
 
 echo" IP Address: $IP_ADDR"
