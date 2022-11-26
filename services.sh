@@ -29,7 +29,17 @@ case "$CHK_STAT" in
 		;;
 
 	*)
-		echo "The $1 service is unavailable.";;
+		echo "The $1 service is unavailable."
+		echo "###################"
+		echo "Install $1?";;
+		read INSTALL_PKG
+		if [[ "$INSTALL_PKG" == 'yes' ]]; then
+			echo "Installing $1 package."
+			apt-get install $1 -y
+			systemctl status $1
+		fi
+
+		;;
 esac
 
 exit 0
